@@ -26,8 +26,8 @@ def main(arg):
 		first_O_line = 2
 		for i in range(number_of_chains):
 			second_O_line = first_O_line + 1
-			first_H_line = first_O_line + 41
-			second_H_line = first_O_line + 42
+			first_H_line = first_O_line + 42
+			second_H_line = first_O_line + 43
 
 			values_O1 = lines[first_O_line].strip().split()
 			values_O2 = lines[second_O_line].strip().split()

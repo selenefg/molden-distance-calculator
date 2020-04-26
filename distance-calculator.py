@@ -23,16 +23,16 @@ def main(arg):
 			lines = file.read().splitlines()
 			number_of_chains = (int(lines[0])/elements_in_chain) - 1
 		
-		first_O_line = 2
+		O1_line = 2
 		for i in range(number_of_chains):
-			second_O_line = first_O_line + 1
-			first_H_line = first_O_line + 42
-			second_H_line = first_O_line + 43
+			O2_line = O1_line + 1
+			H1_line = O1_line + 42
+			H2_line = O1_line + 43
 
-			values_O1 = lines[first_O_line].strip().split()
-			values_O2 = lines[second_O_line].strip().split()
-			values_H1 = lines[first_H_line].strip().split()
-			values_H2 = lines[second_H_line].strip().split()
+			values_O1 = lines[O1_line].strip().split()
+			values_O2 = lines[O2_line].strip().split()
+			values_H1 = lines[H1_line].strip().split()
+			values_H2 = lines[H2_line].strip().split()
 
 			O1X = float(values_O1[1])
 			O1Y = float(values_O1[2])
@@ -47,11 +47,13 @@ def main(arg):
 			H2Y = float(values_H2[2])
 			H2Z = float(values_H2[3])
 
+			print(O1_line - 1, H1_line - 1)
 			print(sqrt((O1X - H1X)**2 + (O1Y - H1Y)**2 + (O1Z - H1Z)**2))
+			print(O2_line - 1, H2_line - 1)
 			print(sqrt((O2X - H2X)**2 + (O2Y - H2Y)**2 + (O2Z - H2Z)**2))
 			print('')	
 
-			first_O_line += elements_in_chain
+			O1_line += elements_in_chain
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
